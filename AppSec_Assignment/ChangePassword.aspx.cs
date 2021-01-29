@@ -273,11 +273,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                Response.Write("HelpLink = {0}" + ex.HelpLink + "<br>");
-                Response.Write("Message = {0}" + ex.Message + "<br>");
-                Response.Write("Source = {0}" + ex.Source + "<br>");
-                Response.Write("StackTrace = {0}" + ex.StackTrace + "<br>");
-                Response.Write("TargetSite = {0}" + ex.TargetSite + "<br>");
+                throw new Exception(ex.ToString());
             }
             finally { connection.Close(); }
             return s;
