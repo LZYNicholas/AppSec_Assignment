@@ -52,7 +52,6 @@ C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\bin\roslyn\VB
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.csprojAssemblyReference.cache
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.csproj.CopyComplete
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.dll
