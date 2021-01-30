@@ -230,3 +230,30 @@ body {
 .fix {
     width: 500px;
 }
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 800px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }

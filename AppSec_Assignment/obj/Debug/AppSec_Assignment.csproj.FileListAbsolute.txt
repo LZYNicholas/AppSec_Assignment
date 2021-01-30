@@ -56,3 +56,4 @@ C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\App
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.csproj.CopyComplete
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.dll
 C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.pdb
+C:\Users\Nicholas\source\repos\AppSec_Assignment\AppSec_Assignment\obj\Debug\AppSec_Assignment.csprojAssemblyReference.cache

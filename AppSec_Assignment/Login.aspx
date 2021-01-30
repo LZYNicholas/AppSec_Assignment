@@ -7,6 +7,8 @@
     <title></title>
     <script src="https://www.google.com/recaptcha/api.js?render=6Le0sB0aAAAAABE1tTszfPMnMaDiCFlxu0WXxD6o"></script>
     <link rel="stylesheet" type="text/css" href="CSS/general.css"/>
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/all.min.css" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -26,6 +28,10 @@
 <body>
     <div class="context">
     <div class="centered">
+        <div style="text-align:center;color:#70AB8F; background-color:#E4DBBF;font-size:25px; margin-bottom:15px; border-radius:10px; padding:10px 0;">
+            <p><b>Welcome to SITConnect</b></p>
+            <div class="tooltip"><span style="font-size:20px;text-decoration:underline;">What is SITConnect?</span><span class="tooltiptext">SITConnect is a stationary store that provide allow staff and students to purchase stationaries.</span></div>
+        </div>
      <div class="padding">
          <p class="styleheading">LOGIN</p>
          <div class="centered">
