@@ -7,8 +7,6 @@
     <title></title>
     <script src="https://www.google.com/recaptcha/api.js?render=6Le0sB0aAAAAABE1tTszfPMnMaDiCFlxu0WXxD6o"></script>
     <link rel="stylesheet" type="text/css" href="CSS/general.css"/>
-    <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="~/lib/Font-Awesome/css/all.min.css" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -36,13 +34,18 @@
          <p class="styleheading">LOGIN</p>
          <div class="centered">
     <form id="form1" runat="server">
-        <div class="tablestyle">
+        <div class="tablestyle1">
             <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">Email:</td>
                     <td>
                         <asp:TextBox ID="tb_email" CssClass="text-input" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+             ErrorMessage="Invalid Email" ControlToValidate="tb_email"
+             SetFocusOnError="True"
+             ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>

@@ -132,7 +132,7 @@
             <br/>
             <asp:Button ID="Return" CssClass="btn-oval" runat="server" CausesValidation="false" Text="Return to login page" OnClick="Return_Click" />
             </div>
-        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Label ID="Label1" ForeColor="Red" runat="server"></asp:Label>
     </form>
     </div>
         </div>
