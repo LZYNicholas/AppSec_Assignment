@@ -67,7 +67,7 @@ namespace AppSec_Assignment
             }//try
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally
             {

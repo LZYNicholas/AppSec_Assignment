@@ -51,7 +51,7 @@
                 <tr>
                     <td class="auto-style3">Password:</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="tb_password" CssClass="text-input" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tb_password" CssClass="text-input" TextMode="Password" runat="server"></asp:TextBox>
                     </td>
                 </tr>
             </table>

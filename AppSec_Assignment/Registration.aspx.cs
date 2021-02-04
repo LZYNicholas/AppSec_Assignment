@@ -62,39 +62,42 @@ namespace AppSec_Assignment
         DateTime maxpass;
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
-            if (EmailExist(tb_email.Text))
+            if(validateInput())
             {
-                Label1.Text = "Email already exists!";
-            }
-            else if (checkPassword(tb_password.Text) != 5)
-            {
-                Label1.Text = "Password is does not meet the requirements!";
-            }
-            else
-            {
-                //string pwd = get value from your Textbox
-                string pwd = tb_password.Text.ToString().Trim(); ;
-                //Generate random "salt"
-                RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-                byte[] saltByte = new byte[8];
-                //Fills array of bytes with a cryptographically strong sequence of random values.
-                rng.GetBytes(saltByte);
-                salt = Convert.ToBase64String(saltByte);
-                SHA512Managed hashing = new SHA512Managed();
-                string pwdWithSalt = pwd + salt;
-                byte[] plainHash = hashing.ComputeHash(Encoding.UTF8.GetBytes(pwd));
-                byte[] hashWithSalt = hashing.ComputeHash(Encoding.UTF8.GetBytes(pwdWithSalt));
-                finalHash = Convert.ToBase64String(hashWithSalt);
-                RijndaelManaged cipher = new RijndaelManaged();
-                cipher.GenerateKey();
-                Key = cipher.Key;
-                IV = cipher.IV;
-                loginattempt = 0;
-                dateattempted = DateTime.Now;
-                minpass = DateTime.Now.AddMinutes(5);
-                maxpass = DateTime.Now.AddMinutes(15);
-                createAccount();
-                Response.Redirect("Login.aspx");
+                if (EmailExist(tb_email.Text))
+                {
+                    Label1.Text = "Email already exists!";
+                }
+                else if (checkPassword(tb_password.Text) != 5)
+                {
+                    Label1.Text = "Password is does not meet the requirements!";
+                }
+                else
+                {
+                    //string pwd = get value from your Textbox
+                    string pwd = tb_password.Text.ToString().Trim(); ;
+                    //Generate random "salt"
+                    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+                    byte[] saltByte = new byte[8];
+                    //Fills array of bytes with a cryptographically strong sequence of random values.
+                    rng.GetBytes(saltByte);
+                    salt = Convert.ToBase64String(saltByte);
+                    SHA512Managed hashing = new SHA512Managed();
+                    string pwdWithSalt = pwd + salt;
+                    byte[] plainHash = hashing.ComputeHash(Encoding.UTF8.GetBytes(pwd));
+                    byte[] hashWithSalt = hashing.ComputeHash(Encoding.UTF8.GetBytes(pwdWithSalt));
+                    finalHash = Convert.ToBase64String(hashWithSalt);
+                    RijndaelManaged cipher = new RijndaelManaged();
+                    cipher.GenerateKey();
+                    Key = cipher.Key;
+                    IV = cipher.IV;
+                    loginattempt = 0;
+                    dateattempted = DateTime.Now;
+                    minpass = DateTime.Now.AddMinutes(5);
+                    maxpass = DateTime.Now.AddMinutes(15);
+                    createAccount();
+                    Response.Redirect("Login.aspx");
+                }
             }
         }
 
@@ -140,7 +143,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
         }
 
@@ -190,10 +193,63 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { }
             return cipherText;
+        }
+
+
+    //back end regex validation just in case
+        public bool validateInput()
+        {
+            Label1.Text = String.Empty;
+            Label1.ForeColor = Color.Red;
+            if (tb_firstname.Text == "")
+            {
+                Label1.Text += "First name field is empty" + "<br/>";
+            }
+            if (tb_lastname.Text == "")
+            {
+                Label1.Text += "Last name field is empty" + "<br/>";
+            }
+            if (tb_email.Text == "")
+            {
+                Label1.Text += "Email field is empty" + "<br/>";
+            }
+            else if (!Regex.IsMatch(tb_email.Text, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
+            {
+                Label1.Text += "Wrong Email format" + "<br/>";
+            }
+            if(tb_cardno.Text == "")
+            {
+                Label1.Text += "Card Information field is empty" + "<br/>";
+            }
+            else if(!Regex.IsMatch(tb_cardno.Text, @"^4[0-9]{12}(?:[0-9]{3})?$"))
+            {
+                Label1.Text += "Only Visa Format" + "<br/>";
+            }
+            if (tb_password.Text == "")
+            {
+                Label1.Text += "Password field is empty" + "<br/>";
+            }
+            if(tb_dob.Text == "")
+            {
+                Label1.Text += "Date of Birth field is empty" + "<br/>";
+            }
+            else if(!Regex.IsMatch(tb_dob.Text, @"20\d{2}(-|\/)((0[1-9])|(1[0-2]))(-|\/)((0[1-9])|([1-2][0-9])|(3[0-1]))"))
+            {
+                Label1.Text += "Wrong date format" + "<br/>";
+            }
+
+            if (String.IsNullOrEmpty(Label1.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

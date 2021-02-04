@@ -62,12 +62,16 @@
                                 <p>Email:</p>
                                 <asp:TextBox ID="tb_email" CssClass="text-input" runat="server"></asp:TextBox>
                                 <p>Current Password:</p>
-                                <asp:TextBox ID="tb_currentpass" CssClass="text-input" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tb_currentpass" TextMode="Password" CssClass="text-input" runat="server"></asp:TextBox>
+
                                 <p>New Password:</p>
-                                <asp:TextBox ID="tb_password" runat="server" CssClass="text-input" onkeyup="javascript:validate()"></asp:TextBox>
+                                <div class="tooltip">Requirements (Hover)
+  <span class="tooltiptext">At least 8 characters<br/>At least 1 number<br/>At least 1 uppercase<br/>At least 1 lowercase<br/>At least 1 special character</span>
+</div>
+                                <asp:TextBox ID="tb_password" runat="server" TextMode="Password" CssClass="text-input" onkeyup="javascript:validate()"></asp:TextBox>
                                 <asp:Label ID="lbl_pwdchecker" runat="server"></asp:Label>
                                 <p>Confirm Password:</p>
-                                <asp:TextBox ID="tb_confirmpassword" runat="server" CssClass="text-input" onkeyup="javascript:confirmpassword()"></asp:TextBox>
+                                <asp:TextBox ID="tb_confirmpassword" TextMode="Password" runat="server" CssClass="text-input" onkeyup="javascript:confirmpassword()"></asp:TextBox>
                                 <asp:Label ID="lbl_cfmpwdchecker" runat="server"></asp:Label>
                                 <div class="btn-div">
                                 <p>

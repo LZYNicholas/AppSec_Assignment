@@ -65,7 +65,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Credit Card Number (VISA Only):</td>
+            <td class="auto-style2">Credit Card Number (VISA Only,4XXXXXXXXXXXXXXX):</td>
             <td>
                 <asp:TextBox ID="tb_cardno" runat="server" CssClass="text-input"></asp:TextBox>
                 <br />
@@ -89,7 +89,11 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Password:</td>
+            <td class="auto-style2">Password:
+                <div class="tooltip">Requirements (Hover)
+  <span class="tooltiptext">At least 8 characters<br/>At least 1 number<br/>At least 1 uppercase<br/>At least 1 lowercase<br/>At least 1 special character</span>
+</div>
+            </td>
             <td>
                 <asp:TextBox ID="tb_password" runat="server" CssClass="text-input" TextMode="Password" onkeyup="javascript:validate()"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Password is required" ForeColor="Red" 

@@ -235,29 +235,28 @@ body {
     width: 500px;
 }
 
-
 .tooltip {
     position: relative;
     display: inline-block;
+    border-bottom: 1px dotted black;
 }
 
     .tooltip .tooltiptext {
         visibility: hidden;
-        width: 800px;
-        background-color: #555;
+        width: 200px;
+        background-color: black;
         color: #fff;
         text-align: center;
-        padding: 10px;
         border-radius: 6px;
+        padding: 5px 0;
         position: absolute;
         z-index: 1;
-        bottom: 125%;
+        bottom: 100%;
+        left: 50%;
         margin-left: -60px;
-        opacity: 0;
-        transition: opacity 0.4s;
+        padding:10px;
     }
 
     .tooltip:hover .tooltiptext {
         visibility: visible;
-        opacity: 1;
     }

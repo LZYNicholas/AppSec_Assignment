@@ -173,7 +173,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return h;
@@ -207,7 +207,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return h;
@@ -241,7 +241,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return h;
@@ -273,7 +273,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return s;
@@ -307,7 +307,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally
             {

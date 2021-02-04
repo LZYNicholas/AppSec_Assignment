@@ -99,7 +99,7 @@ namespace AppSec_Assignment
                         {
                             int updatedAttempt = loginAttempt + 1;
                             DateTime dateattempted = DateTime.Now;
-                            DateTime Allowed = DateTime.Now.AddMinutes(15);
+                            DateTime Allowed = DateTime.Now.AddMinutes(10);
                             UpdateAccountDate(userid, dateattempted, Allowed);
                             UpdateAccountLoginAttempt(userid, updatedAttempt);
                             errorMsg.Text = "Userid or password is not valid. Please try again.";
@@ -126,7 +126,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/GenericError.html");
             }
             finally { }
         }
@@ -174,7 +174,8 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
+                return false;
             }
         }
 
@@ -206,7 +207,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally
             {
@@ -244,7 +245,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return h;
@@ -277,7 +278,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally
             {
@@ -309,7 +310,8 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
+                return 0;
             }
         }
         public int UpdateAccountDate(string id, DateTime dateattempted, DateTime dateallowed)
@@ -335,7 +337,8 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
+                return 0;
             }
         }
 
@@ -367,7 +370,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return h;
@@ -399,7 +402,7 @@ namespace AppSec_Assignment
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                Response.Redirect("/ErrorPages/500.html");
             }
             finally { connection.Close(); }
             return s;
@@ -429,7 +432,8 @@ namespace AppSec_Assignment
             }
             catch (WebException ex)
             {
-                throw ex;
+                Response.Redirect("/ErrorPages/500.html");
+                return false;
             }
         }
     }
